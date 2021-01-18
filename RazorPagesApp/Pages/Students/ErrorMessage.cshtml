@@ -1,0 +1,20 @@
+﻿@page
+@model RazorPagesApp.Pages.Students.ErrorMessageModel
+@{
+    ViewData["Title"] = "ErrorMessage";
+}
+
+<p class="error">Age can't be less than 0</p>
+<form method="get">
+    <button type="submit" asp-page="./Index">Retry</button>
+</form>
+<style>
+.error{
+    color:red;
+    
+}
+button{
+    background-color:aqua;
+}
+
+</style>

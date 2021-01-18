@@ -19,13 +19,21 @@ namespace RazorPagesApp.Pages.Students
         }
         public async Task<IActionResult> OnPostAsync()
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && Student.Age>0)
             {
                 _context.Students.Add(Student);
                 await _context.SaveChangesAsync();
                 return RedirectToPage("Index");
+                
+            }
+            if (Student.Age <= 0)
+            {
+                return RedirectToPage("ErrorMessage");
+
+
             }
             return Page();
+          
         }
     }
 }

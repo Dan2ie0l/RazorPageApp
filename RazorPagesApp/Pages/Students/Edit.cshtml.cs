@@ -38,7 +38,12 @@ namespace RazorPagesApp.Pages.Students
             {
                 return Page();
             }
+            if (Student.Age <= 0)
+            {
+                return RedirectToPage("ErrorMessage");
 
+
+            }
             _context.Attach(Student).State = EntityState.Modified;
 
             try
