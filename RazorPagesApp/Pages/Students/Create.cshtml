@@ -1,13 +1,44 @@
 ﻿@page
 @model RazorPagesApp.Pages.Students.CreateModel
 @{ ViewData["Title"] = "Ավելացնել նոր ուսանողի"; }
-  
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.2.js">
+</script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.8.1/jquery.validate.js">
+</script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js">
+</script>
 <h2>@ViewData["Title"]</h2>
 <div asp-validation-summary="All"></div>
 <form method="POST">
     <div><label>Անուն:</label><br /><input asp-for="Student.Name" /></div>
     <div><label>Ազգանուն:</label><br /><input asp-for="Student.Surname" /></div>
     <div><label>Տարիք:</label><br /><input asp-for="Student.Age" type="number" /></div>
-    <input type="submit" value="Ուղարկել" />
-   
+    <br />
+    <input class="input" type="submit" value="Ուղարկել" />
+
 </form>
+<style>
+
+    .input {
+        background-color: lightgreen;
+    }
+    .validation-summary-errors {
+        border: 2px solid red;
+        color: red;
+        font-weight: bold;
+        margin: 6px;
+        width: 30%;
+    }
+
+    .field-validation-error {
+        color: red;
+        font-weight: bold;
+        background-color: yellow;
+    }
+
+    .input-validation-error {
+        color: red;
+        font-weight: bold;
+        background-color: pink;
+    }
+</style>

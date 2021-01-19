@@ -20,8 +20,8 @@
             <td>@student.Age</td>
             <td>
                 <form method="post">
-                    <a asp-page="Edit" asp-route-id="@student.Id">Փոփոխել</a>
-                    <button type="submit" asp-page-handler="delete" asp-route-id="@student.Id">
+                    <a class ="edit" asp-page="Edit" asp-route-id="@student.Id">Փոփոխել</a>
+                    <button class ="delete"type="submit" asp-page-handler="delete" asp-route-id="@student.Id">
                         Ջնջել
                     </button>
                 </form>
@@ -30,3 +30,14 @@
         }
     </tbody>
 </table>
+
+<style>
+    .delete{
+        color:red;
+    }
+    .edit{
+        color:yellow;
+        background-color:white;
+    }
+  
+</style>

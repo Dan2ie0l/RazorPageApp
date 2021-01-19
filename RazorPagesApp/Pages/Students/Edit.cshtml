@@ -1,8 +1,12 @@
 ﻿@page "{id:int}"
 @model RazorPagesApp.Pages.Students.EditModel
-@{
-    ViewData["Title"] = "Ուսանողի տվյալնելի փոփոխում";
-}
+@{ ViewData["Title"] = "Ուսանողի տվյալնելի փոփոխում"; }
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.2.js">
+</script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.8.1/jquery.validate.js">
+</script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js">
+</script>
 <h2>@ViewData["Title"]</h2>
 
 <form method="post">
@@ -29,7 +33,34 @@
             <span asp-validation-for="Student.Age"></span>
         </div>
     </div>
+    <br />
     <div>
-        <input type="submit" value="Պահպանել" />
+        <input class="input" type="submit" value="Պահպանել" />
     </div>
 </form>
+<style>
+
+    .input {
+        background-color: lightgreen;
+    }
+
+    .validation-summary-errors {
+        border: 2px solid red;
+        color: red;
+        font-weight: bold;
+        margin: 6px;
+        width: 30%;
+    }
+
+    .field-validation-error {
+        color: red;
+        font-weight: bold;
+        background-color: yellow;
+    }
+
+    .input-validation-error {
+        color: red;
+        font-weight: bold;
+        background-color: pink;
+    }
+</style>

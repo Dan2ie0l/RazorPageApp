@@ -26,12 +26,7 @@ namespace RazorPagesApp.Pages.Students
                 return RedirectToPage("Index");
                 
             }
-            if (Student.Age <= 0)
-            {
-                return RedirectToPage("ErrorMessage");
-
-
-            }
+        
             return Page();
           
         }
